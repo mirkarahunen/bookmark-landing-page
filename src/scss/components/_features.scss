@@ -1,0 +1,113 @@
+@use "../utils/variables"as *;
+
+.features {
+    margin-bottom: 200px;
+
+    .features-links {
+        margin: 70px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .features-link {
+            padding: 30px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 2px solid $lightGrey;
+            position: relative;
+
+            &:first-child {
+                border-top: 2px solid $lightGrey;
+
+                @media(min-width: $lg) {
+                    border-top: none;
+                }
+            }
+
+            &.active {
+                color: $veryDarkBlue;
+            }
+
+            &.active::before {
+                content: "";
+                position: absolute;
+                background-color: $softRed;
+                height: 5px;
+                width: 135px;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+
+                @media (min-width: $lg) {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (min-width: $lg) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    
+    .features-content {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        
+    
+        &.active {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+    
+        @media (min-width: $lg) {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .features-content-image {
+            flex: 0 1 50%;
+
+            &::before {
+                border-bottom-right-radius: 200px;
+                border-top-right-radius: 200px;
+                transform: translateX(-70%);
+                height: 100%;
+    
+                @media (min-width: 540px) {
+                    transform: translateX(-60%);
+                }
+    
+                @media (min-width: $sm) {
+                    transform: translateX(-50%);
+                }
+    
+                @media(min-width: $md) {
+                    transform: translateX(-55%);
+                }
+    
+                @media(min-width: $lg) {
+                    transform: translateX(-65%);
+                }
+    
+                @media(min-width: $xl) {
+                    transform: translateX(-55%);
+                }
+            }
+        }
+    
+        
+    
+        .features-content-text {
+            padding: 80px 0 0 0;
+            flex: 0 1 50%;
+
+            @media (min-width: $lg) {
+                padding: 0 10px 0 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@use "../utils/variables"as *;
+
+footer {
+    background-color: $veryDarkBlue;
+   
+    .footer {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding: 50px 50px;
+        flex-direction: column;
+
+        @media (min-width: $lg) {
+            flex-direction: row;
+            padding: 50px 100px;
+        }
+
+        @media (min-width: $xl) {
+            padding: 50px 130px;
+        }
+
+        @media (min-width: $xxl) {
+            padding: 50px 170px;
+        }
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+        flex-direction: column;
+
+        @media (min-width: $lg) {
+            flex-direction: row;
+            margin-left: 70px;
+        }
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 30px 0;
+
+            li {
+                padding: 20px 0;
+
+                @media (min-width: $lg) {
+                    padding: 0;
+                }
+            }
+
+            @media (min-width: $lg) {
+                flex-direction: row;
+                text-align: left;
+                margin: 0;
+            }
+
+            .footer-link {
+                color: white;
+
+                &:hover {
+                    color: $softRed;
+                }
+            }
+        }        
+    }
+}

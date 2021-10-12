@@ -1,0 +1,88 @@
+@use "../utils/variables"as *;
+
+.contact {
+    background-color: $softBlue;
+    padding: 70px 20px;
+
+    @media (min-width: $md) {
+        padding: 100px;
+    }
+
+    .contact-text {
+        max-width: 440px;
+        
+        span {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        span, 
+        h2 {
+            color: white;
+            margin-top: 40px;
+        }
+
+    }
+    
+    .contact-form {
+        display: flex;
+        max-width: 440px;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (min-width: $md) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .form-input {
+            position: relative;
+            padding: 3px;
+
+            @media (min-width: $md) {
+                width: 300px;
+            }
+
+            .error-icon {
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+                visibility: hidden;
+                z-index: 10;
+
+                &.show {
+                    visibility: visible;
+                }
+            }
+
+            .error {
+                border-radius: 5px;
+                visibility: hidden;
+                background-color: $softRed;
+                color: white;
+                padding: 60px 10px 10px 10px;
+                width: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+
+                &.show {
+                    visibility: visible;
+                }
+            }
+        }
+
+        .form-button {
+            padding-top: 3px;
+            
+            button {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    }
+    
+
+    
+}

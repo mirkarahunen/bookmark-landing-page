@@ -1,0 +1,111 @@
+@use "../utils/variables"as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+main {
+    width: 100%;
+    overflow: hidden; 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
+    cursor: pointer;
+    color: $grayishBlue;
+
+    li:hover {
+        color: $softRed;
+    }
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    border: 2px solid transparent;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 13px 15px;
+    margin-top: 10px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: white;
+        transition: all 0.2s ease-in;
+    }
+
+    @media (min-width: $lg) {
+        padding: 13px 20px;
+    }
+}
+
+input {
+    padding: 17px;
+    border: transparent;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    z-index: 10;
+    position: relative;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    @media (min-width: $md) {
+        padding: 0 50px;
+    }
+
+    @media (min-width: $lg) {
+        padding: 0 100px;
+    }
+
+    @media (min-width: $xl) {
+        padding: 0 130px;
+    }
+
+    @media (min-width: $xxl) {
+        padding: 0 170px;
+    }
+    
+}
+
+.text-container {
+    max-width: 520px;
+}
+
+.text-centered {
+    text-align: center;
+    margin: 0 auto;
+}
+
+section {
+    margin-top: 70px;
+}

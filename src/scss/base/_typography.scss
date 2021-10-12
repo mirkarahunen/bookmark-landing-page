@@ -1,0 +1,98 @@
+// typography rules and typography helper classes
+@use "../utils/variables" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 500;
+    color: $veryDarkBlue;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 40px;
+    
+    @media (min-width: $md) {
+        font-size: 44px;
+        line-height: 52px;
+    }
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 32px;
+
+    @media(min-width: $md) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 16px;
+
+    @media(min-width: $md) {
+        font-size: 26px;
+        line-height: 24px;
+    }
+}
+
+h4 {
+    font-size: 26px;
+    line-height: 23px;
+}
+
+h5 {
+    font-size: 14px;
+
+    @media (min-width: $md) {
+        font-size: 18px;
+    }
+
+}
+
+
+p {
+    color: $grayishBlue;
+    font-size: 14px;
+    line-height: 24px;
+
+    @media (min-width: $md) {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0px 20px;
+    color: $veryDarkBlue;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+
+    &:hover {
+        color: $softRed;
+    }
+}
+
+
+button {
+    font-size: 15px;
+}
+
+
+ul {
+    font-size: 16px;
+}
+
+span,
+input {
+    font-size: 13px;
+}
+

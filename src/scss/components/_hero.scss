@@ -1,0 +1,80 @@
+@use "../utils/variables"as *;
+
+.hero {
+  
+    .container {
+        padding-right: 30px;
+
+        @media (min-width: $md) {
+            padding-right: 50px;
+        }
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        
+    
+        @media (min-width: $lg) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: unset;
+        }
+
+    
+        .hero-text {
+            padding-top: 40px;
+            text-align: center;
+            flex: 0 1 50%;
+            margin-right: 20px;
+
+            @media(min-width: $lg) {
+                text-align: left;
+            }
+    
+            .hero-buttons {
+                margin-top: 40px;
+                max-width: 340px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+
+                @media(min-width: $lg) {
+                    margin: 0;
+
+                }
+            }
+        }
+
+        .hero-image {
+            flex: 0 1 50%;
+            margin-bottom: 100px;
+
+            &::before {
+                border-bottom-left-radius: 200px;
+                border-top-left-radius: 200px;
+                top: 20%;
+                transform: translateX(50px);
+                height: 100%;
+            
+                @media (min-width: $lg) {
+                    height: 70%;
+                }
+            
+                @media (min-width: 1061px) {
+                    height: 100%;
+                }
+            }
+            
+        }
+    
+    }
+}
+
+
+
+
+
+

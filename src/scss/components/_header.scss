@@ -1,0 +1,152 @@
+@use "../utils/variables"as *;
+
+.header,
+.nav-desktop  {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    
+    .logo {
+        z-index: 200;
+
+        .logo-text.mobile,
+        .logo-circle.mobile {
+            fill: white;
+            z-index: 200;
+        }
+
+        .logo-path.mobile {
+            fill: $veryDarkBlue;
+            z-index: 200;
+        }
+    }
+    
+    .desktop {
+        display: none;
+    
+        @media (min-width: $lg) {
+            display: flex;
+        }
+
+        
+        .nav-button {
+
+            .nav-link {
+                color: white;
+                border-radius: 5px;
+                padding: 10px 25px;
+                border: 2px solid transparent;  
+                background-color: $softRed;   
+                box-shadow: 0 6px 0.5rem 1px rgb(0 0 0 / 10%);
+
+                &:hover {
+                    color: $softRed;
+                    background-color: white;
+                    border: solid 2px $softRed;
+                }
+            }
+        }
+    }
+
+    
+    .mobile {
+        display: block;
+        
+        @media (min-width: $lg) {
+            display: none;        
+        }
+    
+        nav {
+            background-color: rgba(37, 43, 70, 0.95);
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 0%;
+            transition: all 1s ease 0.5s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            &.show {
+                height: 100%;
+                padding: 30px;
+                transition: all 1.5s ease;    
+            }
+
+            .nav-mobile {
+                margin: 70px auto;
+                opacity: 0;
+                transition: opacity 1.5s ease;
+                width: 100%;
+
+                
+                &.show {
+                    opacity: 1;
+                    transition: opacity 1s ease;
+                }
+
+                li {
+                    border-top: 1px solid hsla(0, 0%, 100%, .2);
+
+                    .nav-link {
+                        color: white;
+                        text-align: center;
+                        padding: 20px;
+                    }
+                }
+
+                .nav-button-mobile {
+                    padding-top: 20px;
+
+                    .btn-mobile {
+                        border: 2px solid $lightGrey;
+                        border-radius: 5px;
+                        margin: 0;
+                    }
+                }
+            } 
+
+            .social-media {
+                opacity: 0;
+                transition: opacity 0.2s ease;
+
+                &.show {    
+                    opacity: 1;
+                    transition: opacity 1s ease 2s;
+                }
+            } 
+        }   
+        
+        .mobile-menu-icons {
+            display: flex;
+
+            .close {
+                display: none;
+       
+                &.show {
+                    display: flex;
+                    z-index: 200;
+                    align-items: center;                  
+                }
+            }
+    
+            .burger {
+                width: 30px;
+       
+                &.hide {
+                    display: none;
+                }
+            }
+        } 
+    }
+}
+
+
+
+
+

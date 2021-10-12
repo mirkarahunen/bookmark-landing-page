@@ -1,0 +1,15 @@
+@use "../utils/variables"as *;
+
+.img-bg {
+    position: relative;
+}
+
+.img-bg::before {
+    content: "";
+    display: block;
+    background-color: $softBlue;
+    position: absolute;
+    z-index: -1;
+    width: 1000px;
+    top: 20%;
+}

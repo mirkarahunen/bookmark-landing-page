@@ -1,0 +1,30 @@
+@use "../utils/variables"as *;
+
+.primary {
+    background-color: $softBlue;
+    color: white;
+    
+
+    &:hover {
+        color: $softBlue;
+        border: solid 2px $softBlue;
+    }
+}
+
+.secondary {
+    box-shadow: 0 10px 20px rgb(73 93 207 / 20%);
+
+    &:hover {
+        border: solid 2px $veryDarkBlue;
+    }
+}
+
+.tertiary {
+    color: white;
+    background-color: $softRed;
+
+    &:hover {
+        color: $softRed;
+        border: solid 2px $softRed;
+    }
+}
