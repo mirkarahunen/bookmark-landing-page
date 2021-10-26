@@ -1,0 +1,12 @@
+@use "../utils/variables"as *;
+
+// Navigation
+@keyframes nav-enter {
+    0% { clip-path: circle(100px at right top); opacity: 0;}
+    100% { clip-path: circle(2200px at right top); opacity: 1;}
+  }
+  
+  @keyframes nav-leave {
+    0% { clip-path: circle(2200px at right top); }
+    80% { clip-path: circle(100px at right top); opacity: 0;}
+  }
