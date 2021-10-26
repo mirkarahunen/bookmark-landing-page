@@ -1,55 +1,65 @@
-   //Variables
-    const $featuresTab = $('.features-link')
-    const $featuresContent = $('.features-content')
-    const $accordionItems = $('.accordion .header')
-    const $formInput = $('input')
-    const $form = $('form')
-    //const $mobileNav = $('.nav-mobile')
-    const $burgerIcon = $('.burger')
-    const $mobileBg = $('.mobile nav')
-    const $mobileLinks = $('.nav-mobile')
-    const $social = $('.social-media')
-    const $logo = $('.logo-text, .logo-path, .logo-circle')
-    const $close = $('.close')
-      
+$(document).ready(() => {
+
+    let collapsed = false
+    let menuOpen = false
+    
     // Features navigation
-    $featuresTab.click(function() {
+    $('.features-link').click((event) => {
        
-        let $dataIndex = $(this).attr('data-index')
-       
+        let $dataIndex = $(event.currentTarget).attr('data-index')
+        const $featuresContent = $('.features-content')     
       
         if ($dataIndex === "0") {
-            $($featuresTab).siblings('.active').removeClass('active');
+            $(event.currentTarget).siblings('.active').removeClass('active');
             $($featuresContent).siblings('.active').removeClass('active')
-            $(this).addClass('active')
+            $(event.currentTarget).addClass('active')
             $('#content-0').addClass('active')
         }
         else if ($dataIndex === "1") {
-            $($featuresTab).siblings('.active').removeClass('active');
+            $(event.currentTarget).siblings('.active').removeClass('active');
             $($featuresContent).siblings('.active').removeClass('active')
-            $(this).addClass('active')
+            $(event.currentTarget).addClass('active')
             $('#content-1').addClass('active')   
         }
         else if ($dataIndex === "2") {
-            $($featuresTab).siblings('.active').removeClass('active');
+            $(event.currentTarget).siblings('.active').removeClass('active');
             $($featuresContent).siblings('.active').removeClass('active')
-            $(this).addClass('active')
+            $(event.currentTarget).addClass('active')
             $('#content-2').addClass('active')
         }
     })
 
 
-    // FAQ accordion
-    $accordionItems.click(function() {
-        $(this).next().toggleClass('show')
-        $(this).children('svg').children('path').toggleClass('active');
+    // FAQ accordion    
+    $('.item-header').on('click', (event) => {
+
+        // add active class to svg
+        $(event.currentTarget).children('svg').children('path').toggleClass('active');
+
+        // collapsing the accordion
+        if(!collapsed) {  
+            $(event.currentTarget).next().addClass('collapsing')
+            setTimeout(() => {
+                $(event.currentTarget).next().addClass('show')
+            }, 300)
+
+            collapsed = true
+        } else {
+            $(event.currentTarget).next().removeClass('show')
+            $(event.currentTarget).next().removeClass('collapsing')
+
+            collapsed = false
+        }
+        
     })  
 
     // Form Validation 
+    const $formInput = $('input')
+
     // Validate on submit
-    $form.submit(function(event) {
+    $('form').submit((event) => {
         event.preventDefault();
-       
+      
         if ($($formInput).val() === '') {
             //console.log('empty')
             $('.error').addClass('show')
@@ -61,7 +71,7 @@
     })
 
     // Validate on input change
-    $formInput.change(function() {
+    $formInput.change((event) => {
         const $email = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)
         const $val = $formInput.val() 
 
@@ -78,22 +88,33 @@
         }
     }) 
 
-// Mobile Menu
-$burgerIcon.click(function() {
-    $mobileBg.addClass('show')
-    $mobileLinks.addClass('show')
-    $social.addClass('show')
-    $close.addClass('show')
-    $logo.addClass('mobile')
-    $burgerIcon.addClass('hide')
-})
+    // Mobile Menu
+    $('.menu-btn').click(() => {
 
-$close.click(function() {
-    $mobileBg.removeClass('show')
-    $mobileLinks.removeClass('show')
-    $social.removeClass('show')
-    $logo.removeClass('mobile')
-    $burgerIcon.removeClass('hide')
-    $close.removeClass('show')
-})
+        const $burgerIcon = $('.menu-btn')
+        const $mobileLinks = $('.mobile')
+        const $logo = $('.logo-text, .logo-path, .logo-circle')
+        
+        //console.log(menuOpen);
+        
+        if(!menuOpen) {
+            $mobileLinks.addClass('show')
+            $logo.addClass('white')
+            $burgerIcon.addClass('open')
+            menuOpen = true
+            
 
+        } else if (menuOpen) {
+            $mobileLinks.addClass('transition-close')
+            $mobileLinks.removeClass('show')
+           
+            setTimeout(() => {
+                $mobileLinks.removeClass('transition-close')
+                $logo.removeClass('white')
+                $burgerIcon.removeClass('open')
+                menuOpen = false
+
+            }, 400)
+        }
+    })
+})
