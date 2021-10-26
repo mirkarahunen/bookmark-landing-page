@@ -6,38 +6,47 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 250px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 40px auto 135px auto;
 
     @media (min-width: $lg) {
         flex-direction: row;
+        margin: 60px auto 238px auto;
     }
 
     .card {
         text-align: center;
-        border-radius: 15px;
+        border-radius: 10px;
         border: none;
-        padding: 30px 0 30px 0;
+        padding: 42px 0 25px 0;
         box-shadow: 0 10px 20px rgb(73 93 207 / 20%);
+        margin: 0 10px;
+
+        @media(min-width: $lg) {
+            padding-top: 40px;
+        }
 
         img {
-            margin: 0 auto;
+            margin: 0 auto 10px auto;
         }
 
         h4 {
-            margin-bottom: 0;
+            margin: 30px 0 12px 0;
+        }
+
+        span {
+            color: $grayishBlue;
+            font-size: 14px;
         }
 
         .dots {
-            padding: 15px 0 25px 0;
+            padding: 40px 0 16px 0;
         }
 
         &:last-child {
             transform: none;
-            margin-top: 40px;
+            margin-top: 50px;
 
-            @media (min-width: 840px) {
+            @media (min-width: 900px) {
                 margin-top: 0;
             }
 
@@ -45,12 +54,17 @@
                 transform: translateY(80px);
             }
         }
+
+        .btn-card {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
         
         &:nth-child(2) {
             transform: none;
-            margin-top: 40px;
+            margin-top: 48px;
 
-            @media (min-width: $md) {
+            @media (min-width: 600px) {
                 margin-top: 0;
             }
 
