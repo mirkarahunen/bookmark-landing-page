@@ -24,7 +24,6 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    max-width: 700px;
     cursor: pointer;
     color: $grayishBlue;
 
@@ -47,8 +46,7 @@ button {
     appearance: none;
     cursor: pointer;
     border-radius: 5px;
-    padding: 13px 15px;
-    margin-top: 10px;
+    letter-spacing: 0.5px;
 
     &:focus {
         outline: none;
@@ -104,8 +102,4 @@ input {
 .text-centered {
     text-align: center;
     margin: 0 auto;
-}
-
-section {
-    margin-top: 70px;
 }
