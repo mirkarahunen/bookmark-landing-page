@@ -8,20 +8,20 @@ footer {
         margin: 0 auto;
         display: flex;
         align-items: center;
-        padding: 50px 50px;
+        padding: 40px 30px;
         flex-direction: column;
 
         @media (min-width: $lg) {
+            padding: 30px 100px;
             flex-direction: row;
-            padding: 50px 100px;
         }
 
         @media (min-width: $xl) {
-            padding: 50px 130px;
+            padding: 30px 130px;
         }
 
         @media (min-width: $xxl) {
-            padding: 50px 170px;
+            padding: 30px 170px;
         }
     }
 
@@ -44,7 +44,7 @@ footer {
             margin: 30px 0;
 
             li {
-                padding: 20px 0;
+                padding: 15px 0;
 
                 @media (min-width: $lg) {
                     padding: 0;
@@ -59,9 +59,19 @@ footer {
 
             .footer-link {
                 color: white;
+                font-size: 14px;
+
+                @media (min-width: $lg) {
+                    font-size: 13px;
+                }
+                
 
                 &:hover {
                     color: $softRed;
+                }
+
+                @media (min-width: $lg) {
+                    padding-right: 35px;
                 }
             }
         }        
