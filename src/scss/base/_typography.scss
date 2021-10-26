@@ -14,22 +14,27 @@ body {
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 30px;
         line-height: 40px;
-    
+        
+        
         @media (min-width: $md) {
-            font-size: 44px;
+            font-size: 46px;
             line-height: 52px;
+            letter-spacing: 1.2px;    
         }
     }
 
     h2 {
         font-size: 24px;
         line-height: 32px;
-
+        margin-bottom: 0;
+        
         @media(min-width: $md) {
             font-size: 30px;
-            line-height: 40px;
+            line-height: 39px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
     }
 
@@ -44,25 +49,33 @@ body {
     }
 
     h4 {
-        font-size: 26px;
+        font-size: 20px;
         line-height: 23px;
     }
 
     h5 {
-    
+        font-size: 15px;
+        font-weight: 400;
+
         @media (min-width: $md) {
             font-size: 18px;
         }
+
     }
 
 
     p {
         color: $grayishBlue;
         line-height: 24px;
+        font-size: 15px;
+
+        @media(min-width: $sm) {
+            font-size: 16px;
+        }
 
         @media (min-width: $md) {
             font-size: 18px;
-            line-height: 30px;
+            line-height: 26px;
         }
     }
 
@@ -70,16 +83,15 @@ body {
     a {
         cursor: pointer;
         text-decoration: none;
-        margin: 0px 20px;
         color: $veryDarkBlue;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1.2px;
+        font-size: 13px;
 
         &:hover {
             color: $softRed;
         }
     }
-
 
     ul {
         font-size: 16px;
