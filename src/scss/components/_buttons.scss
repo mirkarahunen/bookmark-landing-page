@@ -3,25 +3,36 @@
 .primary {
     background-color: $softBlue;
     color: white;
-    
+    padding: 13px;  
 
     &:hover {
         color: $softBlue;
         border: solid 2px $softBlue;
     }
+
+    @media(min-width: $lg) {
+        padding: 13px 22px;
+    }
 }
 
 .secondary {
     box-shadow: 0 10px 20px rgb(73 93 207 / 20%);
+    background-color: #eee;
+    padding: 13px;
 
     &:hover {
         border: solid 2px $veryDarkBlue;
+    }
+
+    @media(min-width: $lg) {
+        padding: 13px 22px;
     }
 }
 
 .tertiary {
     color: white;
     background-color: $softRed;
+    padding: 15px 21px;
 
     &:hover {
         color: $softRed;
