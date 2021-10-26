@@ -6,7 +6,12 @@
     justify-content: center;
 
     a {
-        padding-right: 0;
+        padding: 0 20px;
+
+        @media (min-width: $lg) {
+            padding: 0 0 0 40px;
+        }
+        
     }
 
     path:hover {
