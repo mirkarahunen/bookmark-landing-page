@@ -1,55 +1,96 @@
 @use "../utils/variables"as *;
 
-.accordion {
-    max-width: 600px;
-    margin: 50px auto;
+.questions {
+    margin-bottom: 123px;
 
-    .item {
-        border: 0;
-        border-bottom: solid 1px rgba(0, 0, 0, 0.1);
-        border-top: solid 1px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        transition: all .5s ease;
+    @media (min-width: $lg) {
+        margin-bottom: 150px;
+    }
 
+    .accordion {
+        max-width: 540px;
+        margin: 48px auto;
 
-        .header {
-            height: auto;
-
-            h5 {
-                padding-right: 30px;
-
-                @media (min-width: $md) {
-                    padding-right: 50px;
-                }
-            }
-
-            svg>path {
-                transform: rotate(0);
-                transform-origin: center;
-                transition: transform 0.5s ease;
-            }
-
-            svg>path.active {
-                stroke: $softRed;
-                transform: rotate(180deg);
+        @media(min-width: $lg) {
+            margin: 60px auto 55px;
+        }
+        
     
-                &:hover {
-                    color: $softRed;
-                    cursor: pointer;
+        .item {
+            border: 0;
+            border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+            max-width: 540px;
+            
+
+            &:first-child {
+                border-top: solid 1px rgba(0, 0, 0, 0.1);
+            }
+    
+    
+            .item-header {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;          
+
+                h5 {
+                    margin-bottom: 20px;
+
+                    @media (min-width: $md) {
+                        padding-right: 50px;
+                        margin-bottom: 15px;
+                    }
                 }
+
+                svg {
+                    cursor: pointer;
+                    margin-top: 10px;
+
+                    @media(min-width: $lg) {
+                        margin-right: 20px;
+                    }
+
+                    path {
+                        transform: rotate(0);
+                        transform-origin: center;
+                        transition: transform 0.5s ease;
+
+                        &.active {
+                            stroke: $softRed;
+                            transform: rotate(180deg);
+                        }
+                        &:hover {
+                            stroke: $softRed;
+                            
+                        }
+                    }   
+                }
+            }
+    
+            .item-answer {
+                display: none;
+                text-overflow: ellipsis;
+                transition: all .3s ease;
+
+                &.collapsing {
+                    display: block;
+                    max-height: 0; 
+                    overflow: hidden;
+                    transition: all 1s ease;
+
+                    &.show {
+                        max-height: 100vh;
+                    }
+                }
+
+                
             }
         }
+    }
 
-        .answer {
-            max-height: 0;
-            opacity: 0;
-            transition: max-height 2s linear, opacity 1s ease 0.8s;
-            overflow: hidden;
-
-            &.show {
-                opacity: 1;
-                max-height: 500px;
-            }
+    .questions-button {
+        button {
+            padding: 15px 20px;
         }
     }
 }
